@@ -10,11 +10,13 @@
 		5E0C12647E40E7CDDD176E9B /* MemoizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */; };
 		5E0C149FEE28FBC77D8D0ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */; };
 		5E0C16E377E399F679D30F5A /* MemoizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C18A4846E56DA710C7AC5 /* MemoizeUITests.swift */; };
+		5E0C1773F857D123BF2FF2F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C184145014BBE98F7E01E /* LoginView.swift */; };
 		5E0C17C54DC51388A7C80A6D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C187C4C115E7225D4319E /* SecondViewController.swift */; };
 		5E0C18A61B75BD4A9568A302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C159E9AF946C5BC0448FC /* LaunchScreen.storyboard */; };
 		5E0C1AAD81A71A204032FD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C13ECCCE0A4FAA390D794 /* FirstViewController.swift */; };
 		5E0C1B436F0B2A78B7A716E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C1515B09302FA02A9BCA9 /* Assets.xcassets */; };
 		5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C1823C7FD2D4424860309 /* AppDelegate.swift */; };
+		9330A6ED2111ABCC003438B8 /* memory.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9330A6EC2111ABCB003438B8 /* memory.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 		5E0C1515B09302FA02A9BCA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0C1701DDDD235603858FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E0C1823C7FD2D4424860309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E0C184145014BBE98F7E01E /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5E0C187C4C115E7225D4319E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5E0C18A4846E56DA710C7AC5 /* MemoizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoizeUITests.swift; sourceTree = "<group>"; };
 		5E0C1A18BA6C299FA799087B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		5E0C1CA326C84EB8756056AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0C1F1C7FB17CED9C09E90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5E0C1FDA7A36F93806823AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		9330A6EC2111ABCB003438B8 /* memory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		5E0C157B5792C10740A419E6 /* Memoize */ = {
 			isa = PBXGroup;
 			children = (
+				9330A6EC2111ABCB003438B8 /* memory.jpg */,
 				5E0C1FDA7A36F93806823AE3 /* Info.plist */,
 				5E0C1515B09302FA02A9BCA9 /* Assets.xcassets */,
 				5E0C159E9AF946C5BC0448FC /* LaunchScreen.storyboard */,
@@ -96,6 +101,7 @@
 				5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */,
 				5E0C13ECCCE0A4FAA390D794 /* FirstViewController.swift */,
 				5E0C187C4C115E7225D4319E /* SecondViewController.swift */,
+				5E0C184145014BBE98F7E01E /* LoginView.swift */,
 			);
 			path = Memoize;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			files = (
 				5E0C1B436F0B2A78B7A716E8 /* Assets.xcassets in Resources */,
 				5E0C18A61B75BD4A9568A302 /* LaunchScreen.storyboard in Resources */,
+				9330A6ED2111ABCC003438B8 /* memory.jpg in Resources */,
 				5E0C149FEE28FBC77D8D0ED9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +275,7 @@
 				5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */,
 				5E0C1AAD81A71A204032FD93 /* FirstViewController.swift in Sources */,
 				5E0C17C54DC51388A7C80A6D /* SecondViewController.swift in Sources */,
+				5E0C1773F857D123BF2FF2F6 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
