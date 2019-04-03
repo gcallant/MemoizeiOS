@@ -1,16 +1,20 @@
 PODS:
-  - Eureka (4.2.0)
+  - BCryptSwift (1.1)
+  - Eureka (4.3.1)
 
 DEPENDENCIES:
+  - BCryptSwift
   - Eureka
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BCryptSwift
     - Eureka
 
 SPEC CHECKSUMS:
-  Eureka: 0748c7bbb2560130e43c7bfa83e99c98854a1f42
+  BCryptSwift: f69992ea5685f6714260842c2770688043b89ab2
+  Eureka: 28ea296f06710f6745266b71f17862048941a32d
 
-PODFILE CHECKSUM: 7647d3fbf2e07b189b7798b2589045500f340012
+PODFILE CHECKSUM: 94c559250184878b562109e887dc9efef0d29d19
 
 COCOAPODS: 1.5.3

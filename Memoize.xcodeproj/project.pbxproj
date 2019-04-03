@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4448DFD22225E9350068D83B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448DFD12225E9350068D83B /* Routes.swift */; };
+		44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B385F7223879FA0054C3DF /* LoginViewController.swift */; };
+		44BEAAB821D7027600C8D646 /* LoginRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */; };
+		44BEAABA2216583D00C8D646 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB92216583D00C8D646 /* User.swift */; };
+		44E1C08921756D31008E8C31 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1C08821756D31008E8C31 /* SignupController.swift */; };
 		5E0C12647E40E7CDDD176E9B /* MemoizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */; };
 		5E0C149FEE28FBC77D8D0ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */; };
 		5E0C16E377E399F679D30F5A /* MemoizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C18A4846E56DA710C7AC5 /* MemoizeUITests.swift */; };
-		5E0C1773F857D123BF2FF2F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C184145014BBE98F7E01E /* LoginView.swift */; };
-		5E0C17C54DC51388A7C80A6D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C187C4C115E7225D4319E /* SecondViewController.swift */; };
+		5E0C1773F857D123BF2FF2F6 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C184145014BBE98F7E01E /* SignupView.swift */; };
 		5E0C18A61B75BD4A9568A302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C159E9AF946C5BC0448FC /* LaunchScreen.storyboard */; };
-		5E0C1AAD81A71A204032FD93 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C13ECCCE0A4FAA390D794 /* FirstViewController.swift */; };
 		5E0C1B436F0B2A78B7A716E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C1515B09302FA02A9BCA9 /* Assets.xcassets */; };
 		5E0C1B655F2ECA533F96E435 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C18D8772353156AC53F89 /* .gitignore */; };
 		5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C1823C7FD2D4424860309 /* AppDelegate.swift */; };
+		5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */; };
+		5E9FBF2B3E5583A3161CCAB4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */; };
+		5E9FBFEC32F7FEC92A613B9E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */; };
 		74605CD13D903EF12454DC69 /* Pods_Memoize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133E16022F4EACED35258810 /* Pods_Memoize.framework */; };
 		9330A6ED2111ABCC003438B8 /* memory.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9330A6EC2111ABCB003438B8 /* memory.jpg */; };
 		D54A0CFCD33E9DAE96ADE660 /* Pods_MemoizeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498DEE125DC5B3E844B2B7AA /* Pods_MemoizeUITests.framework */; };
@@ -42,15 +48,18 @@
 
 /* Begin PBXFileReference section */
 		133E16022F4EACED35258810 /* Pods_Memoize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memoize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4448DFD12225E9350068D83B /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		44B385F7223879FA0054C3DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterTest.swift; sourceTree = "<group>"; };
+		44BEAAB92216583D00C8D646 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		44E1C08821756D31008E8C31 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		498DEE125DC5B3E844B2B7AA /* Pods_MemoizeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoizeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C12CD15FB1E3AF2E808CB /* MemoizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E0C13ECCCE0A4FAA390D794 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoizeTests.swift; sourceTree = "<group>"; };
 		5E0C1515B09302FA02A9BCA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0C1701DDDD235603858FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E0C1823C7FD2D4424860309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E0C184145014BBE98F7E01E /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		5E0C187C4C115E7225D4319E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5E0C184145014BBE98F7E01E /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		5E0C18A4846E56DA710C7AC5 /* MemoizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoizeUITests.swift; sourceTree = "<group>"; };
 		5E0C18D8772353156AC53F89 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		5E0C1A18BA6C299FA799087B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +68,9 @@
 		5E0C1CA326C84EB8756056AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0C1F1C7FB17CED9C09E90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5E0C1FDA7A36F93806823AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		6BCABB9745A1388F977C60C5 /* Pods-MemoizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoizeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoizeTests/Pods-MemoizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92211F11E351D0D16B03FD40 /* Pods-MemoizeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoizeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoizeUITests/Pods-MemoizeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9330A6EC2111ABCB003438B8 /* memory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory.jpg; sourceTree = "<group>"; };
@@ -119,9 +131,14 @@
 				5E0C159E9AF946C5BC0448FC /* LaunchScreen.storyboard */,
 				5E0C1823C7FD2D4424860309 /* AppDelegate.swift */,
 				5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */,
-				5E0C13ECCCE0A4FAA390D794 /* FirstViewController.swift */,
-				5E0C187C4C115E7225D4319E /* SecondViewController.swift */,
-				5E0C184145014BBE98F7E01E /* LoginView.swift */,
+				5E0C184145014BBE98F7E01E /* SignupView.swift */,
+				44E1C08821756D31008E8C31 /* SignupController.swift */,
+				4448DFD12225E9350068D83B /* Routes.swift */,
+				44BEAAB92216583D00C8D646 /* User.swift */,
+				5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */,
+				5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */,
+				44B385F7223879FA0054C3DF /* LoginViewController.swift */,
+				5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */,
 			);
 			path = Memoize;
 			sourceTree = "<group>";
@@ -150,6 +167,7 @@
 			children = (
 				5E0C1A18BA6C299FA799087B /* Info.plist */,
 				5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */,
+				44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */,
 			);
 			path = MemoizeTests;
 			sourceTree = "<group>";
@@ -246,8 +264,15 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = grantcallant;
 				TargetAttributes = {
+					5E0C13AA9A9418AA1AA91F56 = {
+						DevelopmentTeam = N3XUA4BNHL;
+					};
+					5E0C1CBEEFE8B698D14CB4EA = {
+						DevelopmentTeam = N3XUA4BNHL;
+					};
 					5E0C1E69B9F55B71FB49AF43 = {
-						DevelopmentTeam = NQK46Q6Q4V;
+						DevelopmentTeam = N3XUA4BNHL;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -325,10 +350,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Memoize/Pods-Memoize-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BCryptSwift/BCryptSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCryptSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44BEAAB821D7027600C8D646 /* LoginRegisterTest.swift in Sources */,
 				5E0C12647E40E7CDDD176E9B /* MemoizeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,10 +423,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */,
 				5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */,
-				5E0C1AAD81A71A204032FD93 /* FirstViewController.swift in Sources */,
-				5E0C17C54DC51388A7C80A6D /* SecondViewController.swift in Sources */,
-				5E0C1773F857D123BF2FF2F6 /* LoginView.swift in Sources */,
+				4448DFD22225E9350068D83B /* Routes.swift in Sources */,
+				44BEAABA2216583D00C8D646 /* User.swift in Sources */,
+				5E0C1773F857D123BF2FF2F6 /* SignupView.swift in Sources */,
+				44E1C08921756D31008E8C31 /* SignupController.swift in Sources */,
+				5E9FBF2B3E5583A3161CCAB4 /* HomeViewController.swift in Sources */,
+				5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */,
+				5E9FBFEC32F7FEC92A613B9E /* KeychainService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +514,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -494,11 +527,15 @@
 			baseConfigurationReference = A930F8CC8F78506FAB28E348 /* Pods-Memoize.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NQK46Q6Q4V;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N3XUA4BNHL;
 				INFOPLIST_FILE = Memoize/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grantcallant.Memoize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -554,7 +591,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -568,6 +605,7 @@
 			baseConfigurationReference = 6BCABB9745A1388F977C60C5 /* Pods-MemoizeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Memoize.app/Memoize";
+				DEVELOPMENT_TEAM = N3XUA4BNHL;
 				INFOPLIST_FILE = MemoizeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grantcallant.MemoizeTests;
@@ -583,6 +621,7 @@
 			baseConfigurationReference = A6E2160C010CD1489B31B858 /* Pods-MemoizeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Memoize.app/Memoize";
+				DEVELOPMENT_TEAM = N3XUA4BNHL;
 				INFOPLIST_FILE = MemoizeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grantcallant.MemoizeTests;
@@ -597,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 92211F11E351D0D16B03FD40 /* Pods-MemoizeUITests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = N3XUA4BNHL;
 				INFOPLIST_FILE = MemoizeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grantcallant.MemoizeUITests;
@@ -612,11 +652,15 @@
 			baseConfigurationReference = F401741FEAC1C4ED46EB5D5C /* Pods-Memoize.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NQK46Q6Q4V;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N3XUA4BNHL;
 				INFOPLIST_FILE = Memoize/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grantcallant.Memoize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -626,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB42FD192A2134F0728F6AF2 /* Pods-MemoizeUITests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = N3XUA4BNHL;
 				INFOPLIST_FILE = MemoizeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grantcallant.MemoizeUITests;
@@ -646,7 +691,7 @@
 				5E0C1DA08D4C72A64F0E85B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E0C13C8CE5BE321154F5E66 /* Build configuration list for PBXNativeTarget "MemoizeTests" */ = {
 			isa = XCConfigurationList;
@@ -655,7 +700,7 @@
 				5E0C1CE85D1A0F709372D8B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E0C187CCCF68909B5CD9EEF /* Build configuration list for PBXNativeTarget "MemoizeUITests" */ = {
 			isa = XCConfigurationList;
@@ -664,7 +709,7 @@
 				5E0C1D0351303540B188C436 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E0C1F2B1D652A686FFF8212 /* Build configuration list for PBXProject "Memoize" */ = {
 			isa = XCConfigurationList;
@@ -673,7 +718,7 @@
 				5E0C106642480105489C2F8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

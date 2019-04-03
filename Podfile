@@ -7,10 +7,11 @@ target 'Memoize' do
 
   # Pods for Memoize
    source 'https://github.com/CocoaPods/Specs.git'
-   platform :ios, '9.0'
+  platform :ios, '10.0'
    use_frameworks!
 
-   pod 'Eureka' 
+  pod 'Eureka'
+  pod 'BCryptSwift'
 
   target 'MemoizeTests' do
     inherit! :search_paths
