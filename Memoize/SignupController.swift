@@ -27,18 +27,17 @@ class SignupController
       let phone      = dictionary["Phone"] as? String
       let email      = dictionary["Email"] as? String
       let biometrics = dictionary["Biometrics"] as? Bool ?? false
-      var passcode   = dictionary["Passcode"] as! String
-      
-      savePasscode(passcode: passcode)
+      let passcode   = dictionary["Passcode"] as! String
+      let account    = "\(name).\(phone).\(email)"
+      savePasscode(passcode: passcode, account: account)
       
       return User(name: name, phone: phone, email: email, biometrics: biometrics)
    }
    
-   
-   private static func savePasscode(passcode: String)
+   private static func savePasscode(passcode: String, account: String)
    {
-      let hashedPasscode = getHashedPasscode(passcode: passcode)
-      KeychainService.savePassword(hashedPasscode)
+      let hashedPasscode = getHashedPasscode(passcode: passcode)!
+      KeychainService.savePassword(service: service, account: account, data: hashedPasscode)
    }
    
    private static func getHashedPasscode(passcode: String) -> String?
@@ -83,7 +82,7 @@ class SignupController
       {
          return nil
       }
-      let tag                       = "\(user.name).\(user.email).\(user.phone)".data(using: .utf8)!
+      let tag                       = "\(user.name).\(user.phone).\(user.email)".data(using: .utf8)!
       let type                      = kSecAttrKeyTypeECSECPrimeRandom
       var error:      Unmanaged<CFError>?
       let access                    =
