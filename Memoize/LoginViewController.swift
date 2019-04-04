@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  Memoize
 //
-//  Created by Grantley on 3/12/19.
+//  Created by Grant on 3/12/19.
 //  Copyright © 2019 grantcallant. All rights reserved.
 //  Credit: Biometric login tutorial by Jgonfer
 //  @see: https://jgonfer.com/blog/touch-id-authentication-tutorial-for-swift-3/
@@ -13,12 +13,11 @@ import LocalAuthentication
 
 class LoginViewController: UIViewController, UITextFieldDelegate
 {
-   
-   
    @IBOutlet weak var passwordText: UITextField!
    @IBOutlet weak var loginButton:  UIButton!
    
-   private var context = LAContext()
+   private let context         = LAContext()
+   private let loginController = LoginController()
    
    
    override func viewDidLoad()
@@ -30,39 +29,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate
       updateLoginButtonState()
    }
 
-//   deinit
-//   {
-//      NotificationCenter.default.removeObserver(self)
-//   }
-//
-//   private func registerLoginNotification()
-//   {
-//      NotificationCenter.default.addObserver(self, selector: #selector(authenticationHandler(loginStatus: <#T##Notification##Foundation.Notification#>)), name: .UIApplicationWillEnterForeground, object: nil)
-//   }
+
    
    override func viewWillAppear(_ animated: Bool)
    {
       super.viewWillAppear(animated)
-      loginUI()
+      loginBiometric()
    }
-
-//   @objc private func authenticationHandler(loginStatus: Notification)
-//   {
-//      if let _ loginStatus.object as? LoginViewController, let
-//   }
    
-   private func loginUI()
+   
+   private func loginBiometric()
    {
       var policy: LAPolicy
-      
-      if #available(iOS 9.0, *)
+   
+      let useBiometrics = {() -> Bool in return UserDefaults.standard.object(forKey: "Biometrics") as! Bool == true}
+   
+      if #available(iOS 9.0, *), useBiometrics()
       {
          policy = .deviceOwnerAuthenticationWithBiometrics
       }
       else
       {
-         context.localizedFallbackTitle = "Enter Passcode"
-         policy = .deviceOwnerAuthentication
+         //Biometrics not available or user opted-out
+         return
       }
       
       var error: NSError?
@@ -73,13 +62,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate
          print(error?.localizedDescription)
          return
       }
-      
-      processLogin(policy: policy)
-      
-      //Show login splash screen?
+   
+      //On Success, loads homeView, on failure, returns
+      processBiometricLogin(policy: policy)
    }
    
-   private func processLogin(policy: LAPolicy)
+   private func processBiometricLogin(policy: LAPolicy)
    {
       context.evaluatePolicy(policy, localizedReason: "Login is Required", reply:
       {
@@ -105,9 +93,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                }
                return
             }
-            self.goToHomeView(sender: nil)
+            self.goToHomeView(sender: self)
          }
       })
+   }
+   
+   private func performStandardLogin()
+   {
+      loginController.login(passwordText.text)
    }
    
    //MARK: Action
@@ -130,7 +123,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    
    @IBAction func buttonLogin(_ sender: UIButton)
    {
-      goToHomeView(sender: sender)
+      self.performStandardLogin()
    }
    
    //MARK: UITextFieldDelegate
@@ -145,6 +138,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    {
       //Hides the Keyboard
       passwordText.resignFirstResponder()
+      self.performStandardLogin()
       return true
    }
    

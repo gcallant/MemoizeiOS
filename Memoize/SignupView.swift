@@ -104,7 +104,6 @@ class SignupView: FormViewController
                   {
                      row in
                      row.title = (row.value ?? false) ? "FaceID/TouchID Enabled" : "FaceID/TouchID Disabled"
-                     self.form.rowBy(tag: "Password")?.baseCell.contentMode
                      row.updateCell()
                   }
           <<< ButtonRow()
@@ -116,9 +115,9 @@ class SignupView: FormViewController
                      if row.section?.form?.validate().count == 0
                      {
                         dictionary = self!.form.values()
-                        let user = SignupController.createUser(dictionary: dictionary)
-                        SignupController.saveUser(user: user!)
-                        SignupController.setupKeys(user: user!)
+                        let user = User.userFactory(dictionary)
+                        User.saveUser(user!)
+                        Key.setupKeys(user!)
                         self!.segue(sender: ButtonRow.self)
                      }
                   }

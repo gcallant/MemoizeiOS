@@ -11,7 +11,6 @@
 		44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B385F7223879FA0054C3DF /* LoginViewController.swift */; };
 		44BEAAB821D7027600C8D646 /* LoginRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */; };
 		44BEAABA2216583D00C8D646 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB92216583D00C8D646 /* User.swift */; };
-		44E1C08921756D31008E8C31 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1C08821756D31008E8C31 /* SignupController.swift */; };
 		5E0C12647E40E7CDDD176E9B /* MemoizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */; };
 		5E0C149FEE28FBC77D8D0ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */; };
 		5E0C16E377E399F679D30F5A /* MemoizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C18A4846E56DA710C7AC5 /* MemoizeUITests.swift */; };
@@ -21,6 +20,9 @@
 		5E0C1B655F2ECA533F96E435 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C18D8772353156AC53F89 /* .gitignore */; };
 		5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C1823C7FD2D4424860309 /* AppDelegate.swift */; };
 		5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */; };
+		5E9FBB51BCF7D986E40C04CE /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBBD6B636216A0EA5FAFE /* Key.swift */; };
+		5E9FBB6AD59121207B8EA2ED /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB876145D6637FB1216E3 /* LoginController.swift */; };
+		5E9FBD43501B4D8904B3621D /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB87735E0BFC1153F79A1 /* Passcode.swift */; };
 		5E9FBF2B3E5583A3161CCAB4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */; };
 		5E9FBFEC32F7FEC92A613B9E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */; };
 		74605CD13D903EF12454DC69 /* Pods_Memoize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 133E16022F4EACED35258810 /* Pods_Memoize.framework */; };
@@ -52,7 +54,6 @@
 		44B385F7223879FA0054C3DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterTest.swift; sourceTree = "<group>"; };
 		44BEAAB92216583D00C8D646 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		44E1C08821756D31008E8C31 /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		498DEE125DC5B3E844B2B7AA /* Pods_MemoizeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoizeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C12CD15FB1E3AF2E808CB /* MemoizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoizeTests.swift; sourceTree = "<group>"; };
@@ -70,7 +71,10 @@
 		5E0C1FDA7A36F93806823AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		5E9FB876145D6637FB1216E3 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5E9FB87735E0BFC1153F79A1 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 		5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5E9FBBD6B636216A0EA5FAFE /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		6BCABB9745A1388F977C60C5 /* Pods-MemoizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoizeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoizeTests/Pods-MemoizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92211F11E351D0D16B03FD40 /* Pods-MemoizeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoizeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoizeUITests/Pods-MemoizeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9330A6EC2111ABCB003438B8 /* memory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory.jpg; sourceTree = "<group>"; };
@@ -132,13 +136,15 @@
 				5E0C1823C7FD2D4424860309 /* AppDelegate.swift */,
 				5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */,
 				5E0C184145014BBE98F7E01E /* SignupView.swift */,
-				44E1C08821756D31008E8C31 /* SignupController.swift */,
 				4448DFD12225E9350068D83B /* Routes.swift */,
 				44BEAAB92216583D00C8D646 /* User.swift */,
 				5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */,
 				5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */,
 				44B385F7223879FA0054C3DF /* LoginViewController.swift */,
 				5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */,
+				5E9FB876145D6637FB1216E3 /* LoginController.swift */,
+				5E9FB87735E0BFC1153F79A1 /* Passcode.swift */,
+				5E9FBBD6B636216A0EA5FAFE /* Key.swift */,
 			);
 			path = Memoize;
 			sourceTree = "<group>";
@@ -428,10 +434,12 @@
 				4448DFD22225E9350068D83B /* Routes.swift in Sources */,
 				44BEAABA2216583D00C8D646 /* User.swift in Sources */,
 				5E0C1773F857D123BF2FF2F6 /* SignupView.swift in Sources */,
-				44E1C08921756D31008E8C31 /* SignupController.swift in Sources */,
 				5E9FBF2B3E5583A3161CCAB4 /* HomeViewController.swift in Sources */,
 				5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */,
 				5E9FBFEC32F7FEC92A613B9E /* KeychainService.swift in Sources */,
+				5E9FBB6AD59121207B8EA2ED /* LoginController.swift in Sources */,
+				5E9FBD43501B4D8904B3621D /* Passcode.swift in Sources */,
+				5E9FBB51BCF7D986E40C04CE /* Key.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

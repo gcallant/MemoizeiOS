@@ -17,13 +17,13 @@ class Routes
       if(AppDelegate.CLEAR_USER)
       {
          UserDefaults.standard.removeObject(forKey: "firstRun")
-         SignupController.clearUser()
+         User.clearUser()
       }
       if(UserDefaults.standard.string(forKey: "firstRun") == nil)
       {
          Routes.showWelcomeView(window: window)
       }
-      else if(SignupController.loadUser() != nil)
+      else if(User.loadUser() != nil)
       {
          showLoginView(window: window)
       }
@@ -43,7 +43,7 @@ class Routes
    
    static func showHomeView(window: UIWindow)
    {
-      let user = SignupController.loadUser()
+      let user = User.loadUser()
       
       if(user != nil)
       {
