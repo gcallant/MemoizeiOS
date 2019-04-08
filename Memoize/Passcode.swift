@@ -16,6 +16,11 @@ class Passcode
       KeychainService.savePassword(service: service, account: account, data: hashedPasscode)
    }
    
+   static func loadPasscode(_ account: String) -> String
+   {
+      return KeychainService.loadPassword(service: service, account: account) ?? ""
+   }
+   
    private static func getHashedPasscode(_ passcode: String) -> String?
    {
       let salt     = BCryptSwift.generateSalt()

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    @IBOutlet weak var passwordText: UITextField!
    @IBOutlet weak var loginButton:  UIButton!
    
+   
    private let context         = LAContext()
    private let loginController = LoginController()
    
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
       
       // registerLoginNotification()
       passwordText.delegate = self
+      passwordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
       updateLoginButtonState()
    }
 
@@ -100,10 +102,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    
    private func performStandardLogin()
    {
-      loginController.login(passwordText.text)
+      if loginController.login(passwordText.text ?? "")
+      {
+         goToHomeView(sender: self)
+      }
+      else
+      {
+         showFailedLoginAlert()
+      }
    }
    
    //MARK: Action
+   
+   private func showFailedLoginAlert()
+   {
+      let alert = UIAlertController(title: "Login Failed", message: "Passcode Inccorect, please try again",
+                                    preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default))
+      self.present(alert, animated: true)
+   }
+   
+   @objc func textFieldDidChange(_ textfield: UITextField)
+   {
+      updateLoginButtonState()
+   }
    
    @IBAction private func goToHomeView(sender: AnyObject?)
    {
