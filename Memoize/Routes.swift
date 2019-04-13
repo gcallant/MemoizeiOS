@@ -43,15 +43,10 @@ class Routes
    
    static func showHomeView(window: UIWindow)
    {
-      let user = User.loadUser()
-      
-      if(user != nil)
-      {
-         let mainStoryboard:     UIStoryboard       = UIStoryboard(name: "Main", bundle: nil)
-         let homeViewController: HomeViewController = mainStoryboard.instantiateViewController(
-                 withIdentifier: "HomeView") as! HomeViewController
-         window.rootViewController = homeViewController
-      }
+      let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      let homeViewController           = mainStoryboard.instantiateViewController(
+              withIdentifier: "HomeBarController") as! UITabBarController
+      window.rootViewController = homeViewController
       window.makeKeyAndVisible()
    }
    

@@ -129,7 +129,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    
    @IBAction private func goToHomeView(sender: AnyObject?)
    {
-      performSegue(withIdentifier: "LoginToHomeSegue", sender: sender)
+      let app = UIApplication.shared.delegate as! AppDelegate
+      app.showHome()
    }
    
    private func showUnexpectedError()
