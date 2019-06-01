@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4448DFD22225E9350068D83B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448DFD12225E9350068D83B /* Routes.swift */; };
+		445C8DDC22A1557F00ACE0F9 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445C8DDB22A1557F00ACE0F9 /* CryptoExportImportManager.swift */; };
 		44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B385F7223879FA0054C3DF /* LoginViewController.swift */; };
 		44BEAAB821D7027600C8D646 /* LoginRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */; };
 		44BEAABA2216583D00C8D646 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB92216583D00C8D646 /* User.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		133E16022F4EACED35258810 /* Pods_Memoize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memoize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4448DFD12225E9350068D83B /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		445C8DDB22A1557F00ACE0F9 /* CryptoExportImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExportImportManager.swift; sourceTree = "<group>"; };
 		44B385F7223879FA0054C3DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterTest.swift; sourceTree = "<group>"; };
 		44BEAAB92216583D00C8D646 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				5E9FB876145D6637FB1216E3 /* LoginController.swift */,
 				5E9FB87735E0BFC1153F79A1 /* Passcode.swift */,
 				5E9FBBD6B636216A0EA5FAFE /* Key.swift */,
+				445C8DDB22A1557F00ACE0F9 /* CryptoExportImportManager.swift */,
 			);
 			path = Memoize;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */,
 				5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */,
 				4448DFD22225E9350068D83B /* Routes.swift in Sources */,
+				445C8DDC22A1557F00ACE0F9 /* CryptoExportImportManager.swift in Sources */,
 				44BEAABA2216583D00C8D646 /* User.swift in Sources */,
 				5E0C1773F857D123BF2FF2F6 /* SignupView.swift in Sources */,
 				5E9FBF2B3E5583A3161CCAB4 /* HomeViewController.swift in Sources */,
