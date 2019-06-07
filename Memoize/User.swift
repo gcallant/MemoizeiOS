@@ -17,6 +17,7 @@ class User: CustomStringConvertible
    var phone:      String?
    var email:      String?
    var biometrics: Bool
+   var tag: Data
    
    
    init?(_ name: String?, _ phone: String?, _ email: String?, _ biometrics: Bool)
@@ -30,6 +31,7 @@ class User: CustomStringConvertible
       self.phone = phone
       self.email = email
       self.biometrics = biometrics
+      self.tag = "\(name).\(phone).\(email).key".data(using: .utf8)!
    }
    
    static func userFactory(_ dictionary: [String: Any?]) -> User?

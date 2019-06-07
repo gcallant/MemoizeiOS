@@ -117,7 +117,7 @@ class SignupView: FormViewController
                         dictionary = self!.form.values()
                         let user = User.userFactory(dictionary)
                         User.saveUser(user!)
-                        Key.setupKeys(user!)
+                        DispatchQueue.main.async{Key.setupKeys(user!)}
                         self!.segue(sender: ButtonRow.self)
                      }
                   }
