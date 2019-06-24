@@ -17,6 +17,7 @@ class User: CustomStringConvertible
    var phone:      String?
    var email:      String?
    var biometrics: Bool
+   var userKey: Key
    var tag: Data
    
    
@@ -32,6 +33,7 @@ class User: CustomStringConvertible
       self.email = email
       self.biometrics = biometrics
       self.tag = "\(name).\(phone).\(email).key".data(using: .utf8)!
+      self.userKey = Key(tag)
    }
    
    static func userFactory(_ dictionary: [String: Any?]) -> User?
@@ -47,15 +49,13 @@ class User: CustomStringConvertible
       return User(name, phone, email, biometrics)
    }
    
-   static func saveUser(_ user: User)
+   func saveUser()
    {
-      print("\(user) was created")
-      UserDefaults.standard.set(user.name, forKey: "Name")
-      UserDefaults.standard.set(user.phone, forKey: "Phone")
-      UserDefaults.standard.set(user.email, forKey: "Email")
-      UserDefaults.standard.set(user.biometrics, forKey: "Biometrics")
+      UserDefaults.standard.set(name, forKey: "Name")
+      UserDefaults.standard.set(phone, forKey: "Phone")
+      UserDefaults.standard.set(email, forKey: "Email")
+      UserDefaults.standard.set(biometrics, forKey: "Biometrics")
       UserDefaults.standard.synchronize()
-      print("\(user) was saved")
    }
    
    static func clearUser()

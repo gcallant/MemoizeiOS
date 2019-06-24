@@ -115,9 +115,8 @@ class SignupView: FormViewController
                      if row.section?.form?.validate().count == 0
                      {
                         dictionary = self!.form.values()
-                        let user = User.userFactory(dictionary)
-                        User.saveUser(user!)
-                        DispatchQueue.main.async{Key.setupKeys(user!)}
+                        let user = User.userFactory(dictionary)!
+                        user.saveUser()
                         self!.segue(sender: ButtonRow.self)
                      }
                   }

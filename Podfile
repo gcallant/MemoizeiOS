@@ -12,6 +12,7 @@ target 'Memoize' do
 
   pod 'Eureka'
   pod 'BCryptSwift'
+  pod 'OAuthSwift'
 
   target 'MemoizeTests' do
     inherit! :search_paths

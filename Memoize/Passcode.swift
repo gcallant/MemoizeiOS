@@ -8,17 +8,17 @@ import BCryptSwift
 
 class Passcode
 {
-   private static let service = "Memoize"
+   private static let APP_NAME = "Memoize"
    
    static func savePasscode(_ passcode: String, _ account: String)
    {
       let hashedPasscode = getHashedPasscode(passcode)!
-      KeychainService.savePassword(service: service, account: account, data: hashedPasscode)
+      KeychainService.savePassword(service: APP_NAME, account: account, data: hashedPasscode)
    }
    
    static func loadPasscode(_ account: String) -> String
    {
-      return KeychainService.loadPassword(service: service, account: account) ?? ""
+      return KeychainService.loadPassword(service: APP_NAME, account: account) ?? ""
    }
    
    private static func getHashedPasscode(_ passcode: String) -> String?

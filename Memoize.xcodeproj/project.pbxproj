@@ -22,7 +22,7 @@
 		5E0C1B655F2ECA533F96E435 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C18D8772353156AC53F89 /* .gitignore */; };
 		5E0C1DBADBC92C40D44AAD5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C1823C7FD2D4424860309 /* AppDelegate.swift */; };
 		5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */; };
-		5E9FB902132CCE55AEC51073 /* ClientServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB5A64394DAA86B36E592 /* ClientServer.swift */; };
+		5E9FB902132CCE55AEC51073 /* ClientServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB5A64394DAA86B36E592 /* ClientServerController.swift */; };
 		5E9FBB51BCF7D986E40C04CE /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBBD6B636216A0EA5FAFE /* Key.swift */; };
 		5E9FBB6AD59121207B8EA2ED /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB876145D6637FB1216E3 /* LoginController.swift */; };
 		5E9FBD43501B4D8904B3621D /* Passcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB87735E0BFC1153F79A1 /* Passcode.swift */; };
@@ -75,7 +75,7 @@
 		5E0C1F1C7FB17CED9C09E90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5E0C1FDA7A36F93806823AE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5E9FB41F2B7EF89DC60D9970 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		5E9FB5A64394DAA86B36E592 /* ClientServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServer.swift; sourceTree = "<group>"; };
+		5E9FB5A64394DAA86B36E592 /* ClientServerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServerController.swift; sourceTree = "<group>"; };
 		5E9FB67DB3F1A00AB773B3B4 /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		5E9FB876145D6637FB1216E3 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		5E9FB87735E0BFC1153F79A1 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				5E9FB87735E0BFC1153F79A1 /* Passcode.swift */,
 				5E9FBBD6B636216A0EA5FAFE /* Key.swift */,
 				445C8DDB22A1557F00ACE0F9 /* CryptoExportImportManager.swift */,
-				5E9FB5A64394DAA86B36E592 /* ClientServer.swift */,
+				5E9FB5A64394DAA86B36E592 /* ClientServerController.swift */,
 				445C8DDD22A7EAE500ACE0F9 /* SettingsViewController.swift */,
 			);
 			path = Memoize;
@@ -366,18 +366,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Memoize/Pods-Memoize-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Memoize/Pods-Memoize-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BCryptSwift/BCryptSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCryptSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Memoize/Pods-Memoize-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Memoize/Pods-Memoize-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4C813A84514A4D81D837EF9A /* [CP] Check Pods Manifest.lock */ = {
@@ -453,7 +455,7 @@
 				5E9FBB6AD59121207B8EA2ED /* LoginController.swift in Sources */,
 				5E9FBD43501B4D8904B3621D /* Passcode.swift in Sources */,
 				5E9FBB51BCF7D986E40C04CE /* Key.swift in Sources */,
-				5E9FB902132CCE55AEC51073 /* ClientServer.swift in Sources */,
+				5E9FB902132CCE55AEC51073 /* ClientServerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

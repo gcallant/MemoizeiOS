@@ -26,7 +26,7 @@
 		<true/>
 	</dict>
 	<key>ServerAddress</key>
-	<string>http://192.168.1.103/api/test</string>
+	<string>http://192.168.1.103:8000/</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>To allow your device to unlock devices when next to them</string>
 	<key>NSCameraUsageDescription</key>
