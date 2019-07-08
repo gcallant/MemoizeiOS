@@ -31,8 +31,6 @@ class Routes
    
    static func showWelcomeView(window: UIWindow)
    {
-      UserDefaults.standard.set(false, forKey: "firstRun")
-      UserDefaults.standard.synchronize()
       let mainStoryboard:        UIStoryboard          = UIStoryboard(name: "Main", bundle: nil)
       let welcomeViewController: WelcomeViewController = mainStoryboard.instantiateViewController(
               withIdentifier: "WelcomeView") as! WelcomeViewController

@@ -115,11 +115,37 @@ class SignupView: FormViewController
                      if row.section?.form?.validate().count == 0
                      {
                         dictionary = self!.form.values()
-                        let user = User.userFactory(dictionary)!
-                        user.saveUser()
+                        self!.performFirstTimeSetup(dictionary)
                         self!.segue(sender: ButtonRow.self)
                      }
                   }
+   }
+   
+   private func performFirstTimeSetup(_ dictionary: [String: Any?])
+   {
+      let user = User.userFactory(dictionary)!
+      let server = ClientServerController()
+      
+         server.authorize(user)
+         {
+            (success, error) in
+            if error != nil
+            {
+               showFailedAuthorizeAlert()
+            }
+            else
+            {
+               user.saveUser()
+            }
+         }
+   }
+   
+   private func showFailedAuthorizeAlert()
+   {
+      let alert = UIAlertController(title: "There was a problem!", message: "Error communicating with server, please try again.",
+                                    preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "Retry", style: .default))
+      self.present(alert, animated: true)
    }
    
    @IBAction func segue(sender: AnyObject)

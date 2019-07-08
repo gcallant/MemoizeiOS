@@ -8,8 +8,8 @@ import Security
 
 class Key
 {
-   var publicKey:  SecKey? = nil
-   var privateKey: SecKey? = nil
+   public var publicKey:  SecKey? = nil
+   public var privateKey: SecKey? = nil
    
    init(_ tag: Data)
    {
@@ -18,45 +18,61 @@ class Key
       {
          print("Key not found, generating new one")
          generateKey(tag)
+         print("Keys generated")
          return
       }
       print("Key found, retrieving public")
-      publicKey = getPublicKey(privateKey!)
+      publicKey = getPublicKey()
       print("Public key found")
    }
    
    public func getPrivateKey(_ tag: Data) -> SecKey?
    {
-      let query: [String: Any] = [kSecClass as String: kSecClassKey,
+      guard privateKey != nil else
+      {
+         let query: [String: Any] = [kSecClass as String: kSecClassKey,
                                      kSecAttrApplicationTag as String: tag,
                                      kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
                                      kSecReturnRef as String: true]
-      
-      var item: CFTypeRef?
-      let status = SecItemCopyMatching(query as CFDictionary, &item)
-      guard status == errSecSuccess else {print("Couldn't retrieve private key \(tag)");return nil}
-      return item as! SecKey
+   
+         var item: CFTypeRef?
+         let status = SecItemCopyMatching(query as CFDictionary, &item)
+         guard status == errSecSuccess
+         else
+         {
+            print("Couldn't retrieve private key \(tag)");
+            return nil
+         }
+         return item as! SecKey
+      }
+      return privateKey
    }
    
-   public func getPublicKey(_ privateKey: SecKey) -> SecKey?
+   public func getPublicKey() -> SecKey?
    {
-      guard let key = SecKeyCopyPublicKey(privateKey) else {print("Couldn't retrieve public key");return nil}
-      return key
+      guard publicKey != nil else
+      {
+         guard let key = SecKeyCopyPublicKey(privateKey!)
+         else
+         {
+            print("Couldn't retrieve public key");
+            return nil
+         }
+         return key
+      }
+      return publicKey
    }
    
-   public func convertKeyForExport(_ key: SecKey?) -> String?
+   public func convertPublicKeyForExport() -> String?
    {
-      let keyData       = SecKeyCopyExternalRepresentation(key!, nil)! as Data
+      let keyData       = SecKeyCopyExternalRepresentation(publicKey!, nil)! as Data
       let keyType       = kSecAttrKeyTypeECSECPrimeRandom
       let keySize       = 256
       let exportManager = CryptoExportImportManager()
-      if let exportablePEMKey = exportManager.exportPublicKeyToPEM(keyData, keyType: keyType as String,
+      let exportablePEMKey = exportManager.exportECPublicKeyToPEM(keyData, keyType: keyType as String,
                                                                    keySize: keySize)
-      {
-         return exportablePEMKey
-      }
       
-      return nil
+      return exportablePEMKey
    }
    
    /**

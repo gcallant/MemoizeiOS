@@ -55,6 +55,7 @@ class User: CustomStringConvertible
       UserDefaults.standard.set(phone, forKey: "Phone")
       UserDefaults.standard.set(email, forKey: "Email")
       UserDefaults.standard.set(biometrics, forKey: "Biometrics")
+      UserDefaults.standard.set(false, forKey: "firstRun")
       UserDefaults.standard.synchronize()
    }
    
