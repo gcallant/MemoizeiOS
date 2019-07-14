@@ -11,6 +11,7 @@ typealias ServiceResponse = (NSDictionary?, Error?) -> Void
 class ClientServerController
 {
    private var serverAddress: String
+   private var token: Token
    
    init()
    {
@@ -18,29 +19,20 @@ class ClientServerController
       let address   = infoPlist!["ServerAddress"] as! String
       serverAddress = address
       print("Got server address as \(address)")
+      token = Token(serverAddress)
    }
    
-   func authorize(_ user: User, _ onCompletion: ServiceResponse) -> Void
+   func uploadUserToServer(_ user: User, _ onCompletion: ServiceResponse) -> Void
    {
-      let tokenUrl = serverAddress + "oauth/token"
-      print("Got token address as \(tokenUrl)")
-      let oauthswift = OAuth2Swift(
-              consumerKey: "5",
-              consumerSecret: "szQXFeiJUeh6De4ThttEnNsWGFjCV5c3Ed0P9Scx",
-              authorizeUrl: "",
-              accessTokenUrl: tokenUrl,
-              responseType: "token"
-      )
-      
-      print("Attempting to get app token")
-      
-      let handle = oauthswift.authorize(deviceToken: "Memoize", grantType: "client_credentials",
-                                        success: {credential, response, parameters in
-                                           print("Got credentials ")
-                                           self.sendUser(oauthswift, credential.oauthToken, user)
-                                        },
-                                        failure: {error in print("error in getting token \(error)")})
+      self.sendUser(token.OAUTH, token.getToken(), user)
    }
+   
+   func requestLogin(_ user: User?)
+   {
+      let server = serverAddress + "api/user/login"
+      let userID = ["id": user!.userID]
+   }
+   
    
    private func sendUser(_ oauthswift: OAuth2Swift, _ token: String, _ user: User) -> Void
    {
@@ -51,8 +43,11 @@ class ClientServerController
               server, parameters: newUser,
               headers: ["Accept": "application/json", "Authorization": "Bearer \(token)", "Content-Type": "application/json; charset=utf-8"],
               success: {response in
-                 let jsonDict = try? response.jsonObject()
-                 print(jsonDict as Any)
+                 let jsonDict = try? response.jsonObject() as! [String: AnyObject]
+                 print(jsonDict)
+                 let userID = jsonDict?["id"] as! Int
+                 user.userID = userID
+                 print("UserID is \(userID)")
               },
               failure: {error in print("Error in creating user \(error)")}
       )

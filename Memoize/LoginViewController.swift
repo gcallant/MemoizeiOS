@@ -116,7 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    
    private func showFailedLoginAlert()
    {
-      let alert = UIAlertController(title: "Login Failed", message: "Passcode Inccorect, please try again",
+      let alert = UIAlertController(title: "Login Failed", message: "Passcode Incorrect, please try again",
                                     preferredStyle: .alert)
       alert.addAction(UIAlertAction(title: "OK", style: .default))
       self.present(alert, animated: true)

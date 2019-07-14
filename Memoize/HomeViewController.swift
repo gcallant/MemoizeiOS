@@ -14,12 +14,11 @@ class HomeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 {
    private var captureSession: AVCaptureSession!
    private var previewLayer:   AVCaptureVideoPreviewLayer!
+   private var user = User.loadUser()
    
    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject],
                        from connection: AVCaptureConnection)
    {
-      captureSession.stopRunning()
-      
       if let metadataObject = metadataObjects.first
       {
          guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject
@@ -37,7 +36,32 @@ class HomeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
    
    private func processCode(_ data: String)
    {
-      print(data)
+      let trimmedData = trimString(data)
+      let trimmedKey = trimString(Key.getServerPublicKey())
+      if(trimmedData == trimmedKey)
+      {
+         let server = ClientServerController()
+         server.requestLogin(user)
+         captureSession.stopRunning()
+      }
+      else
+      {
+         showWrongServerAlert()
+      }
+   }
+   
+   private func trimString(_ stringToTrim: String) -> String
+   {
+      return stringToTrim.filter{!$0.isNewline && !$0.isWhitespace}
+   }
+   
+   private func showWrongServerAlert()
+   {
+      let alert = UIAlertController(title: "Not Memoize Server",
+                                    message: "Sorry, this is not a Memoize server, please check the link and try again.",
+                                    preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default))
+      self.present(alert, animated: true)
    }
    
    override var supportedInterfaceOrientations: UIInterfaceOrientationMask

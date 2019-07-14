@@ -17,11 +17,12 @@ class User: CustomStringConvertible
    var phone:      String?
    var email:      String?
    var biometrics: Bool
+   var userID: Int
    var userKey: Key
    var tag: Data
    
    
-   init?(_ name: String?, _ phone: String?, _ email: String?, _ biometrics: Bool)
+   init?(_ name: String?, _ phone: String?, _ email: String?, _ biometrics: Bool, _ userID: Int = 0)
    {
       guard ((name != nil) || (phone != nil) || (email != nil))
       else
@@ -31,6 +32,7 @@ class User: CustomStringConvertible
       self.name = name
       self.phone = phone
       self.email = email
+      self.userID = userID
       self.biometrics = biometrics
       self.tag = "\(name).\(phone).\(email).key".data(using: .utf8)!
       self.userKey = Key(tag)
@@ -55,8 +57,10 @@ class User: CustomStringConvertible
       UserDefaults.standard.set(phone, forKey: "Phone")
       UserDefaults.standard.set(email, forKey: "Email")
       UserDefaults.standard.set(biometrics, forKey: "Biometrics")
+      UserDefaults.standard.set(userID, forKey: "userID")
       UserDefaults.standard.set(false, forKey: "firstRun")
       UserDefaults.standard.synchronize()
+      print("User \(self) was saved")
    }
    
    static func clearUser()
@@ -65,6 +69,7 @@ class User: CustomStringConvertible
       UserDefaults.standard.removeObject(forKey: "Phone")
       UserDefaults.standard.removeObject(forKey: "Email")
       UserDefaults.standard.removeObject(forKey: "Biometrics")
+      UserDefaults.standard.removeObject(forKey: "userID")
    }
    
    static func loadUser() -> User?
@@ -72,8 +77,9 @@ class User: CustomStringConvertible
       let name       = UserDefaults.standard.string(forKey: "Name")
       let phone      = UserDefaults.standard.string(forKey: "Phone")
       let email      = UserDefaults.standard.string(forKey: "Email")
-      let biometrics = UserDefaults.standard.object(forKey: "Biometrics") as! Bool
+      let biometrics = UserDefaults.standard.bool(forKey: "Biometrics")
+      let userID = UserDefaults.standard.integer(forKey: "userID")
       
-      return User(name, phone, email, biometrics)
+      return User(name, phone, email, biometrics, userID)
    }
 }

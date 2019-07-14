@@ -63,6 +63,13 @@ class Key
       return publicKey
    }
    
+   public static func getServerPublicKey() -> String
+   {
+      let path = Bundle.main.path(forResource: "hostKey", ofType: "pub")
+      let key = try! String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+      return key
+   }
+   
    public func convertPublicKeyForExport() -> String?
    {
       let keyData       = SecKeyCopyExternalRepresentation(publicKey!, nil)! as Data

@@ -126,7 +126,7 @@ class SignupView: FormViewController
       let user = User.userFactory(dictionary)!
       let server = ClientServerController()
       
-         server.authorize(user)
+         server.uploadUserToServer(user)
          {
             (success, error) in
             if error != nil
