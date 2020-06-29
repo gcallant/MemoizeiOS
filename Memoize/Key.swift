@@ -96,7 +96,7 @@ class Key
       let access                    =
               SecAccessControlCreateWithFlags(kCFAllocatorDefault,
                                               kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
-                                              .biometryAny,
+                                              [.privateKeyUsage, .biometryAny],
                                               &error)!
       let attributes: [String: Any] =
               [

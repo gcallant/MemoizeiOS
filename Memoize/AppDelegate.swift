@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PushNotifications
 
 
 @UIApplicationMain
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
    
    public static let CLEAR_USER = false
    public static let TEST       = true
+   let pushNotifications = PushNotifications.shared
    
    var window: UIWindow?
    
@@ -23,9 +25,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate
    func application(_ application: UIApplication,
                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
    {
+      self.pushNotifications.start(instanceId: "e128b240-1e13-47b1-a8f5-996d77061323")
+      self.pushNotifications.registerForRemoteNotifications()
+      try? self.pushNotifications.addDeviceInterest(interest: "hello")
       self.window = UIWindow(frame: UIScreen.main.bounds)
       Routes.viewControllerRoutes(window: self.window!)
       return true
+   }
+   
+   func application(_ application: UIApplication, continue userActivity: NSUserActivity,
+                    restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
+   {
+      guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let url = userActivity.webpageURL,
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+      else
+      {
+         print("Incorrect URL Base type")
+         return false
+      }
+      
+      for path in components.path
+      {
+         print(path)
+      }
+      
+      return true
+   }
+   
+   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
+   {
+      self.pushNotifications.registerDeviceToken(deviceToken)
+   }
+   
+   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                    fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
+   {
+      self.pushNotifications.handleNotification(userInfo: userInfo)
    }
    
    func showHome()
@@ -69,5 +105,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate
    {
       // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
    }
-
+   
 }

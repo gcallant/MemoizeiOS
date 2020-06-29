@@ -58,7 +58,6 @@ class User: CustomStringConvertible
       UserDefaults.standard.set(email, forKey: "Email")
       UserDefaults.standard.set(biometrics, forKey: "Biometrics")
       UserDefaults.standard.set(userID, forKey: "userID")
-      UserDefaults.standard.set(false, forKey: "firstRun")
       UserDefaults.standard.synchronize()
       print("User \(self) was saved")
    }

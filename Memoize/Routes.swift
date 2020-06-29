@@ -19,13 +19,13 @@ class Routes
          UserDefaults.standard.removeObject(forKey: "firstRun")
          User.clearUser()
       }
-      if(UserDefaults.standard.string(forKey: "firstRun") == nil)
-      {
-         Routes.showWelcomeView(window: window)
-      }
-      else if(User.loadUser() != nil)
+      if(User.loadUser() != nil)
       {
          showLoginView(window: window)
+      }
+      else
+      {
+         Routes.showWelcomeView(window: window)
       }
    }
    

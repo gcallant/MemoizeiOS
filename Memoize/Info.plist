@@ -25,14 +25,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>ServerAddress</key>
-	<string>http://192.168.1.103:8000/</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>To allow your device to unlock devices when next to them</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To allow you to login using 2FA without passwords</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>For securing application without passcode</string>
+	<key>ServerAddress</key>
+	<string>http://192.168.1.131:8000/</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

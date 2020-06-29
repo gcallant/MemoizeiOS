@@ -115,32 +115,48 @@ class SignupView: FormViewController
                      if row.section?.form?.validate().count == 0
                      {
                         dictionary = self!.form.values()
-                        self!.performFirstTimeSetup(dictionary)
-                        self!.segue(sender: ButtonRow.self)
+                        DispatchQueue.global(qos: .userInitiated).async
+                        {
+                           self!.performFirstTimeSetup(dictionary,
+                                                       {
+                                                          (success, error) in
+                                                          if(success != nil)
+                                                          {
+                                                             self!.segue(sender: ButtonRow.self)
+                                                          }
+                                                          else
+                                                          {
+                                                             self?.showFailedUploadAlert()
+                                                          }
+                                                       })
+      
+                        }
                      }
                   }
    }
    
-   private func performFirstTimeSetup(_ dictionary: [String: Any?])
+   private func performFirstTimeSetup(_ dictionary: [String: Any?], _ onCompletion: @escaping ServiceResponse) -> Void
    {
       let user = User.userFactory(dictionary)!
       let server = ClientServerController()
       
-         server.uploadUserToServer(user)
+         server.uploadUserToServer(user,
          {
             (success, error) in
-            if error != nil
+            if success != nil
             {
-               showFailedAuthorizeAlert()
+               user.saveUser()
+               onCompletion(success, nil)
             }
             else
             {
-               user.saveUser()
+               self.showFailedUploadAlert()
+               onCompletion(nil, error)
             }
-         }
+         })
    }
    
-   private func showFailedAuthorizeAlert()
+   private func showFailedUploadAlert()
    {
       let alert = UIAlertController(title: "There was a problem!", message: "Error communicating with server, please try again.",
                                     preferredStyle: .alert)

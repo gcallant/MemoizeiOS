@@ -36,13 +36,23 @@ class HomeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
    
    private func processCode(_ data: String)
    {
-      let trimmedData = trimString(data)
-      let trimmedKey = trimString(Key.getServerPublicKey())
-      if(trimmedData == trimmedKey)
+      if(data.count == 26)
       {
+         self.captureSession.stopRunning()
          let server = ClientServerController()
-         server.requestLogin(user)
-         captureSession.stopRunning()
+         server.requestLogin(user, data)
+         {
+            (success, error) in
+            if(success != nil)
+            {
+               print("Hooray! It worked")
+            }
+            else
+            {
+               //
+            }
+         }
+         
       }
       else
       {

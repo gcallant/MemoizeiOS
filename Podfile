@@ -4,6 +4,7 @@
 target 'Memoize' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  #use_modular_headers!
 
   # Pods for Memoize
    source 'https://github.com/CocoaPods/Specs.git'
@@ -12,7 +13,8 @@ target 'Memoize' do
 
   pod 'Eureka'
   pod 'BCryptSwift'
-  pod 'OAuthSwift'
+  pod 'PushNotifications'
+  pod 'OAuthSwift', '~> 1.3.0'
 
   target 'MemoizeTests' do
     inherit! :search_paths
