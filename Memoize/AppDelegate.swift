@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import PushNotifications
+//import PushNotifications
+import Branch
 
 
 @UIApplicationMain
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
    
    public static let CLEAR_USER = false
    public static let TEST       = true
-   let pushNotifications = PushNotifications.shared
+//   let pushNotifications = PushNotifications.shared
    
    var window: UIWindow?
    
@@ -25,9 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
    func application(_ application: UIApplication,
                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
    {
-      self.pushNotifications.start(instanceId: "e128b240-1e13-47b1-a8f5-996d77061323")
-      self.pushNotifications.registerForRemoteNotifications()
-      try? self.pushNotifications.addDeviceInterest(interest: "hello")
+      // if you are using the TEST key
+//  Branch.setUseTestBranchKey(true)
+  // listener for Branch Deep Link data
+//  Branch.getInstance().initSession(launchOptions: launchOptions) { (params, error) in
+    // do stuff with deep link data (nav to page, display content, etc)
+//    print(params as? [String: AnyObject] ?? {})
+  //}
       self.window = UIWindow(frame: UIScreen.main.bounds)
       Routes.viewControllerRoutes(window: self.window!)
       return true
@@ -36,33 +41,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate
    func application(_ application: UIApplication, continue userActivity: NSUserActivity,
                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
    {
-      guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-            let url = userActivity.webpageURL,
-            let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-      else
-      {
-         print("Incorrect URL Base type")
-         return false
-      }
+//      guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+//            let url = userActivity.webpageURL,
+//            let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+//      else
+//      {
+//         print("Incorrect URL Base type")
+//         return false
+//      }
+//
+//      for path in components.path
+//      {
+//         print(path)
+//      }
       
-      for path in components.path
-      {
-         print(path)
-      }
-      
+    // handler for Universal Links
+//  Branch.getInstance().continue(userActivity)
       return true
    }
    
    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
    {
-      self.pushNotifications.registerDeviceToken(deviceToken)
+    //Pusher
+//    self.pushNotifications.registerDeviceToken(deviceToken)
    }
    
    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void)
    {
-      self.pushNotifications.handleNotification(userInfo: userInfo)
+    // handler for Push Notifications
+//  Branch.getInstance().handlePushNotification(userInfo)
+    //Pusher
+//      self.pushNotifications.handleNotification(userInfo: userInfo)
    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//  Branch.getInstance().application(app, open: url, options: options)
+  return true
+}
    
    func showHome()
    {

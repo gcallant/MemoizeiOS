@@ -50,7 +50,7 @@ class Key
    
    public func getPublicKey() -> SecKey?
    {
-      guard publicKey != nil else
+      guard self.publicKey != nil else
       {
          guard let key = SecKeyCopyPublicKey(privateKey!)
          else
@@ -60,7 +60,7 @@ class Key
          }
          return key
       }
-      return publicKey
+      return self.publicKey
    }
    
    public static func getServerPublicKey() -> String
@@ -78,7 +78,7 @@ class Key
       let exportManager = CryptoExportImportManager()
       let exportablePEMKey = exportManager.exportECPublicKeyToPEM(keyData, keyType: keyType as String,
                                                                    keySize: keySize)
-      
+            
       return exportablePEMKey
    }
    

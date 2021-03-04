@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		408A41E6B6CF85F1B24AA5CB /* Pods_Memoize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2AEBF77B7DFBD15BA78527 /* Pods_Memoize.framework */; };
 		4448DFD22225E9350068D83B /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448DFD12225E9350068D83B /* Routes.swift */; };
 		445C8DDC22A1557F00ACE0F9 /* CryptoExportImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445C8DDB22A1557F00ACE0F9 /* CryptoExportImportManager.swift */; };
 		445C8DDE22A7EAE500ACE0F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445C8DDD22A7EAE500ACE0F9 /* SettingsViewController.swift */; };
+		447DA07B24AC6C8F001055A8 /* Pods_Memoize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2AEBF77B7DFBD15BA78527 /* Pods_Memoize.framework */; };
+		447DA07C24AC6C8F001055A8 /* Pods_Memoize.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AB2AEBF77B7DFBD15BA78527 /* Pods_Memoize.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		447DA07E24AC8913001055A8 /* Memoize.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4492971D244B365F00D0D966 /* Memoize.entitlements */; };
 		44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B385F7223879FA0054C3DF /* LoginViewController.swift */; };
 		44BEAAB821D7027600C8D646 /* LoginRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */; };
 		44BEAABA2216583D00C8D646 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB92216583D00C8D646 /* User.swift */; };
@@ -25,6 +27,7 @@
 		5E9FB06BB50CB90BE71C3528 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB04403F91B9C001E271F /* Token.swift */; };
 		5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */; };
 		5E9FB2D3F4AE860B48622039 /* hostKey.pub in Resources */ = {isa = PBXBuildFile; fileRef = 5E9FB73C466595B7AC8516D7 /* hostKey.pub */; };
+		5E9FB8F372D9E3F52981F96F /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBCDC38D6E4AA40DFD36F /* Payload.swift */; };
 		5E9FB902132CCE55AEC51073 /* ClientServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB5A64394DAA86B36E592 /* ClientServerController.swift */; };
 		5E9FBB51BCF7D986E40C04CE /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FBBD6B636216A0EA5FAFE /* Key.swift */; };
 		5E9FBB6AD59121207B8EA2ED /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9FB876145D6637FB1216E3 /* LoginController.swift */; };
@@ -52,6 +55,20 @@
 			remoteInfo = Memoize;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		447DA07D24AC6C8F001055A8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				447DA07C24AC6C8F001055A8 /* Pods_Memoize.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		133E16022F4EACED35258810 /* Pods_Memoize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memoize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +106,7 @@
 		5E9FB87735E0BFC1153F79A1 /* Passcode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passcode.swift; sourceTree = "<group>"; };
 		5E9FBB0CBD5404C2E08D896E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5E9FBBD6B636216A0EA5FAFE /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		5E9FBCDC38D6E4AA40DFD36F /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		6BCABB9745A1388F977C60C5 /* Pods-MemoizeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoizeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoizeTests/Pods-MemoizeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92211F11E351D0D16B03FD40 /* Pods-MemoizeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoizeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoizeUITests/Pods-MemoizeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9330A6EC2111ABCB003438B8 /* memory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = memory.jpg; sourceTree = "<group>"; };
@@ -105,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				408A41E6B6CF85F1B24AA5CB /* Pods_Memoize.framework in Frameworks */,
+				447DA07B24AC6C8F001055A8 /* Pods_Memoize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +193,7 @@
 				445C8DDD22A7EAE500ACE0F9 /* SettingsViewController.swift */,
 				5E9FB73C466595B7AC8516D7 /* hostKey.pub */,
 				5E9FB04403F91B9C001E271F /* Token.swift */,
+				5E9FBCDC38D6E4AA40DFD36F /* Payload.swift */,
 			);
 			path = Memoize;
 			sourceTree = "<group>";
@@ -284,6 +303,7 @@
 				5E0C11E0D325913AB5EAB9C9 /* Frameworks */,
 				5E0C116B87D8851455711CC6 /* Resources */,
 				1BCDC2CBDFFA24943768221B /* [CP] Embed Pods Frameworks */,
+				447DA07D24AC6C8F001055A8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				447DA07E24AC8913001055A8 /* Memoize.entitlements in Resources */,
 				5E0C1B436F0B2A78B7A716E8 /* Assets.xcassets in Resources */,
 				5E0C18A61B75BD4A9568A302 /* LaunchScreen.storyboard in Resources */,
 				9330A6ED2111ABCC003438B8 /* memory.jpg in Resources */,
@@ -393,6 +414,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Memoize/Pods-Memoize-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BCryptSwift/BCryptSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
@@ -400,6 +422,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BCryptSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
@@ -484,6 +507,7 @@
 				5E9FBB51BCF7D986E40C04CE /* Key.swift in Sources */,
 				5E9FB902132CCE55AEC51073 /* ClientServerController.swift in Sources */,
 				5E9FB06BB50CB90BE71C3528 /* Token.swift in Sources */,
+				5E9FB8F372D9E3F52981F96F /* Payload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

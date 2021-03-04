@@ -15,6 +15,7 @@ target 'Memoize' do
   pod 'BCryptSwift'
   pod 'PushNotifications'
   pod 'OAuthSwift', '~> 1.3.0'
+  pod 'Branch'
 
   target 'MemoizeTests' do
     inherit! :search_paths

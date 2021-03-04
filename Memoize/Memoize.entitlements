@@ -6,7 +6,10 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:192.168.1.131</string>
+		<string>applinks:grantcallant.com</string>
+		<string>applinks:dev.skyhype.org</string>
+		<string>applinks:grantcallant-alternate.app.link</string>
+		<string>activitycontinuation:dev.skyhype.org</string>
 	</array>
 </dict>
 </plist>

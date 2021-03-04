@@ -16,6 +16,11 @@ class Passcode
       KeychainService.savePassword(service: APP_NAME, account: account, data: hashedPasscode)
    }
    
+   static func saveToken(_ token: String, _ account: String)
+   {
+      KeychainService.savePassword(service: APP_NAME, account: account, data: token)
+   }
+   
    static func loadPasscode(_ account: String) -> String
    {
       return KeychainService.loadPassword(service: APP_NAME, account: account) ?? ""
