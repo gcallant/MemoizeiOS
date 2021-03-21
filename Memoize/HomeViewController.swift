@@ -43,15 +43,16 @@ class HomeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
          captureSession.stopRunning()
          let server = ClientServerController()
          server.requestLogin(user, data)
-         {
+         {[self]
             (success, error) in
             if(success != nil)
             {
-               print("Hooray! It worked")
+               goToLoggedInView(sender: self)
             }
             else
             {
-               //
+               showUnauthorizedAlert()
+               viewDidLoad()
             }
          }
          
@@ -65,6 +66,15 @@ class HomeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
    private func trimString(_ stringToTrim: String) -> String
    {
       return stringToTrim.filter{!$0.isNewline && !$0.isWhitespace}
+   }
+   
+   private func showUnauthorizedAlert()
+   {
+      let alert = UIAlertController(title: "Error during authentication",
+                                    message: "Sorry, there was a problem in authenticating your credentials, please try again.",
+                                    preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default))
+      self.present(alert, animated: true)
    }
    
    private func showWrongServerAlert()
@@ -87,6 +97,12 @@ class HomeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
       {
          captureSession.stopRunning()
       }
+   }
+   
+   @IBAction private func goToLoggedInView(sender: AnyObject?)
+   {
+      let app = UIApplication.shared.delegate as! AppDelegate
+      app.showLoggedIn()
    }
    
    

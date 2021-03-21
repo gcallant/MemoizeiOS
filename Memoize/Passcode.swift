@@ -13,12 +13,19 @@ class Passcode
    static func savePasscode(_ passcode: String, _ account: String)
    {
       let hashedPasscode = getHashedPasscode(passcode)!
+      KeychainService.removePassword(service: APP_NAME, account: account)
       KeychainService.savePassword(service: APP_NAME, account: account, data: hashedPasscode)
    }
    
    static func saveToken(_ token: String, _ account: String)
    {
+      KeychainService.removePassword(service: APP_NAME, account: account)
       KeychainService.savePassword(service: APP_NAME, account: account, data: token)
+   }
+   
+   static func removeToken(_ account: String)
+   {
+      KeychainService.removePassword(service: APP_NAME, account: account)
    }
    
    static func loadPasscode(_ account: String) -> String

@@ -24,6 +24,74 @@ extension Digest
    }
 }
 
+extension String
+{
+   
+   var parametersFromQueryString: [String: String]
+   {
+      return dictionaryBySplitting("&", keyValueSeparator: "=")
+   }
+   
+   /// Encodes url string making it ready to be passed as a query parameter. This encodes pretty much everything apart from
+   /// alphanumerics and a few other characters compared to standard query encoding.
+   var urlEncoded:                String
+   {
+      let customAllowedSet = CharacterSet(
+              charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
+      return self.addingPercentEncoding(withAllowedCharacters: customAllowedSet)!
+   }
+   
+   var urlQueryEncoded: String?
+   {
+      return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+   }
+   
+   func dictionaryBySplitting(_ elementSeparator: String, keyValueSeparator: String) -> [String: String] {
+      var string = self
+      
+      if hasPrefix(elementSeparator) {
+         string = String(dropFirst(1))
+      }
+      
+      var parameters = [String: String]()
+      
+      let scanner = Scanner(string: string)
+      
+      var key: NSString?
+      var value: NSString?
+      
+      while !scanner.isAtEnd {
+         key = nil
+         scanner.scanUpTo(keyValueSeparator, into: &key)
+         scanner.scanString(keyValueSeparator, into: nil)
+         
+         value = nil
+         scanner.scanUpTo(elementSeparator, into: &value)
+         scanner.scanString(elementSeparator, into: nil)
+         
+         if let key = key as String? {
+            if let value = value as String? {
+               if key.contains(elementSeparator) {
+                  var keys = key.components(separatedBy: elementSeparator)
+                  if let key = keys.popLast() {
+                     parameters.updateValue(value, forKey: String(key))
+                  }
+                  for flag in keys {
+                     parameters.updateValue("", forKey: flag)
+                  }
+               } else {
+                  parameters.updateValue(value, forKey: key)
+               }
+            } else {
+               parameters.updateValue("", forKey: key)
+            }
+         }
+      }
+      
+      return parameters
+   }
+}
+
 
 class ClientServerController
 {
@@ -39,10 +107,47 @@ class ClientServerController
       token = Token(serverAddress)
    }
    
+   /**
+    If user has previously logged in, and has a token saved, then verify user can still login
+    - Returns: true if token is verified and login succeeds, false otherwise
+    */
+   func isAuthenticated(_ onCompletion: @escaping ServiceResponse)
+   {
+      guard let userToken = token.getToken(account: "UserToken")
+              else{onCompletion(nil, nil); return}
+      let server = serverAddress + "api/isAuthenticated"
+      let headers         = ["Accept": "application/json", "Authorization": "Bearer \(userToken)", "Content-Type": "application/json; charset=utf-8"]
+      print(headers)
+      
+      token.OAUTH.client.get(
+              server, parameters: ["":""], headers: headers, success: {response in
+         
+         onCompletion([:], nil)
+      }, failure: {error in print("Not Authenticated");onCompletion(nil, error)}
+      )
+      
+   }
+   
+   func logout(_ onCompletion: @escaping ServiceResponse)
+   {
+      guard let userToken = token.getToken(account: "UserToken")
+      else{onCompletion(nil, nil); return}
+      let server = serverAddress + "api/logout"
+      let headers         = ["Accept": "application/json", "Authorization": "Bearer \(userToken)", "Content-Type": "application/json; charset=utf-8"]
+      print(headers)
+   
+      token.OAUTH.client.post(
+              server, parameters: ["":""], headers: headers, success: {[self]response in
+         token.removeToken(account: "UserToken")
+         onCompletion([:], nil)
+      }, failure: {error in print("Could not logout");onCompletion(nil, error)}
+      )
+   }
+   
    func uploadUserToServer(_ user: User, _ onCompletion: @escaping ServiceResponse) -> Void
    {
       let server:  String = serverAddress + "api/user"
-      let headers         = ["Accept": "application/json", "Authorization": "Bearer \(token.getToken())", "Content-Type": "application/json; charset=utf-8"]
+      let headers         = ["Accept": "application/json", "Authorization": "Bearer \(token.getToken(account: "MemoizeToken"))", "Content-Type": "application/json; charset=utf-8"]
       let newUser: [String: Any]
                           = ["name": user.name!, "email": user.email!, "phone": user.phone!, "public_key": user.userKey.convertPublicKeyForExport()!]
       print(headers)
@@ -63,6 +168,8 @@ class ClientServerController
               }
       )
    }
+   
+   
    
    @available(iOS 13.0, *)
    func requestLogin(_ user: User?, _ randomID: String, _ onCompletion: @escaping ServiceResponse)
@@ -101,11 +208,32 @@ class ClientServerController
       
       let headers = ["Accept": "application/json", "Content-Type": "application/json; charset=utf-8"]
       token.OAUTH.client.post(
-              server, parameters: payload, headers: headers, success: {response in
-         print(response.data)
+              server, parameters: payload, headers: headers, success: {[self]response in
+         receiveToken(response: response)
          onCompletion([:], nil)
       }, failure: {error in print("Error when requesting login"); onCompletion(nil, error)}
       )
+   }
+   
+   private func receiveToken(response: OAuthSwiftResponse)
+   {
+      let responseJSON: Any? = try? response.jsonObject(options: .mutableContainers)
+   
+      let responseParameters: OAuthSwift.Parameters
+   
+      if let jsonDico = responseJSON as? [String: Any] {
+         responseParameters = jsonDico
+      } else
+      {
+         responseParameters = response.string?.parametersFromQueryString ?? [:]
+      }
+   
+      guard let accessToken = responseParameters["access_token"] as? String else {
+         let message = NSLocalizedString("Could not get Access Token", comment: "Due to an error in the OAuth2 process, we couldn't get a valid token.")
+         return
+      }
+      print("Received token from server \(accessToken)")
+      token.saveToken(token: accessToken, account: "UserToken")
    }
    
    private func signData(payload: Data, key: SecKey) -> Data?

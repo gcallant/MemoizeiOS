@@ -16,6 +16,7 @@
 		44B385F8223879FA0054C3DF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B385F7223879FA0054C3DF /* LoginViewController.swift */; };
 		44BEAAB821D7027600C8D646 /* LoginRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */; };
 		44BEAABA2216583D00C8D646 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BEAAB92216583D00C8D646 /* User.swift */; };
+		44DE71DF25FE34AE00A4CE43 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DE71DE25FE34AE00A4CE43 /* LoggedInView.swift */; };
 		5E0C12647E40E7CDDD176E9B /* MemoizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */; };
 		5E0C149FEE28FBC77D8D0ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0C198E308C4AC1FDDAD8EF /* Main.storyboard */; };
 		5E0C16E377E399F679D30F5A /* MemoizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C18A4846E56DA710C7AC5 /* MemoizeUITests.swift */; };
@@ -82,6 +83,7 @@
 		44B385F7223879FA0054C3DF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		44BEAAB721D7027600C8D646 /* LoginRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterTest.swift; sourceTree = "<group>"; };
 		44BEAAB92216583D00C8D646 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		44DE71DE25FE34AE00A4CE43 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		47DEBA07D26E12E6EB63B273 /* Pods_MemoizeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoizeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C12CD15FB1E3AF2E808CB /* MemoizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C14B0D4ADF60AA24EE3AE /* MemoizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoizeTests.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				5E9FB73C466595B7AC8516D7 /* hostKey.pub */,
 				5E9FB04403F91B9C001E271F /* Token.swift */,
 				5E9FBCDC38D6E4AA40DFD36F /* Payload.swift */,
+				44DE71DE25FE34AE00A4CE43 /* LoggedInView.swift */,
 			);
 			path = Memoize;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				44BEAABA2216583D00C8D646 /* User.swift in Sources */,
 				5E0C1773F857D123BF2FF2F6 /* SignupView.swift in Sources */,
 				5E9FBF2B3E5583A3161CCAB4 /* HomeViewController.swift in Sources */,
+				44DE71DF25FE34AE00A4CE43 /* LoggedInView.swift in Sources */,
 				5E9FB0F4A532DBDF4668D909 /* WelcomeViewController.swift in Sources */,
 				5E9FBFEC32F7FEC92A613B9E /* KeychainService.swift in Sources */,
 				445C8DDE22A7EAE500ACE0F9 /* SettingsViewController.swift in Sources */,

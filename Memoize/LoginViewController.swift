@@ -30,8 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
       passwordText.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
       updateLoginButtonState()
    }
-
-
+   
    
    override func viewWillAppear(_ animated: Bool)
    {
@@ -43,9 +42,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    private func loginBiometric()
    {
       var policy: LAPolicy
-   
+      
       let useBiometrics = {() -> Bool in return UserDefaults.standard.object(forKey: "Biometrics") as! Bool == true}
-   
+      
       if #available(iOS 9.0, *), useBiometrics()
       {
          policy = .deviceOwnerAuthenticationWithBiometrics
@@ -64,7 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
          print(error?.localizedDescription)
          return
       }
-   
+      
       //On Success, loads homeView, on failure, returns
       processBiometricLogin(policy: policy)
    }
@@ -75,7 +74,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
       {
          (success, error) in
          DispatchQueue.main.async
-         {
+         {[self] in
             guard success
             else
             {
@@ -85,7 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                   self.showUnexpectedError()
                   return
                }
-               switch(error)
+               switch (error)
                {
                   case LAError.authenticationFailed:
                      print("Could not authenticate")
@@ -95,7 +94,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate
                }
                return
             }
-            self.goToHomeView(sender: self)
+            validLogin({(success, error) in
+               if (success != nil)
+               {
+                  self.goToLoggedInView(sender: self)
+               }
+               else
+               {
+                  self.goToHomeView(sender: self)
+               }
+            }
+            )
          }
       })
    }
@@ -104,7 +113,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate
    {
       if loginController.login(passwordText.text ?? "")
       {
-         goToHomeView(sender: self)
+         validLogin({(success, error) in
+            if (success != nil)
+            {
+               self.goToLoggedInView(sender: self)
+            }
+            else
+            {
+               self.goToHomeView(sender: self)
+            }
+         }
+         )
       }
       else
       {
@@ -112,7 +131,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate
       }
    }
    
+   @IBAction private func goToLoggedInView(sender: AnyObject?)
+   {
+      let app = UIApplication.shared.delegate as! AppDelegate
+      app.showLoggedIn()
+   }
+   
    //MARK: Action
+   
+   private func validLogin(_ onCompletion: @escaping ServiceResponse)
+   {
+      let server = ClientServerController()
+      server.isAuthenticated({
+         (success, error) in
+         if (success != nil)
+         {
+            onCompletion(success, nil)
+         }
+         else
+         {
+            onCompletion(nil, error)
+         }
+      }
+      )
+   }
    
    private func showFailedLoginAlert()
    {

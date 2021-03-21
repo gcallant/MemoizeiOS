@@ -86,6 +86,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
       Routes.showHomeView(window: window!)
    }
    
+   func showLoggedIn()
+   {
+      self.window = UIWindow(frame: UIScreen.main.bounds)
+      Routes.showLoggedInView(window: window!)
+   }
+   
    
    func applicationWillResignActive(_ application: UIApplication)
    {

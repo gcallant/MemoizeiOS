@@ -48,6 +48,15 @@ class Routes
       window.makeKeyAndVisible()
    }
    
+   static func showLoggedInView(window: UIWindow)
+   {
+      let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+      let loggedInView           = mainStoryboard.instantiateViewController(
+              withIdentifier: "LoggedInView")
+      window.rootViewController = loggedInView
+      window.makeKeyAndVisible()
+   }
+   
    class func showLoginView(window: UIWindow)
    {
       let mainStoryboard:      UIStoryboard     = UIStoryboard(name: "Main", bundle: nil)
